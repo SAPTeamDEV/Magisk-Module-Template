@@ -1,2 +1,2 @@
-### v1.0
+### Changelog
 * Initial release.
