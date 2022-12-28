@@ -1,3 +1,3 @@
 ### Changelog
-* Add setup.py for initializing Module (You can delete it after first launch)
-* Fix changelog title
+* Add ModuleDisplayName and ModuleAuthorName variables to setup for more customization.
+* Exclude setup and readme files from archiving to reduce zip file size.

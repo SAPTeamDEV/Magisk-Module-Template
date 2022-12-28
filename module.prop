@@ -1,7 +1,7 @@
 id=@(ModuleName)
 name=@(ModuleDisplayName)
-version=v1.1
-versionCode=11
+version=v1.2
+versionCode=12
 author=@(ModuleAuthorName)
 description=@(ModuleDescription)
 updateJson=https://raw.githubusercontent.com/SAPTeamDEV/@(ModuleName)/master/update.json
