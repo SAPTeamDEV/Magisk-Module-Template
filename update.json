@@ -1,0 +1,6 @@
+{
+    "version": "1.0",
+    "versionCode": 10,
+    "zipUrl": "https://github.com/SAPTeamDEV/@(ModuleName)/releases/latest/download/@(ModuleName).zip",
+    "changelog": "https://raw.githubusercontent.com/SAPTeamDEV/@(ModuleName)/master/changelog.md"
+}
