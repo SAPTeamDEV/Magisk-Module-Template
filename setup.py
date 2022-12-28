@@ -40,6 +40,6 @@ for f in makeTree():
 	
 	# Do modifications
 	if hasModified:
-		with open(f 'w') as file:
+		with open(f, 'w') as file:
 			file.write(fData)
 
