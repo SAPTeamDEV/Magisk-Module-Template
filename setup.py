@@ -4,7 +4,9 @@ from turtle import fd
 
 # Change this values according to your Project.
 ModuleName = os.path.split(os.path.split(__file__)[0])[1]
+ModuleDisplayName = ModuleName.replace('-', ' ')
 ModuleDescription = ""
+ModuleAuthorName = ""
 
 ScriptName = os.path.split(__file__)[1]
 
@@ -33,9 +35,17 @@ for f in makeTree():
 	if '@(ModuleName)' in fData:
 		fData = fData.replace('@(ModuleName)', ModuleName)
 		hasModified = True
+	# Replace module display name
+	if '@(ModuleDisplayName)' in fData:
+		fData = fData.replace('@(ModuleDisplayName)', ModuleDisplayName)
+		hasModified = True
 	#Replace module description
 	if '@(ModuleDescription)' in fData:
 		fData = fData.replace('@(ModuleDescription)', ModuleDescription)
+		hasModified = True
+	# Replace module author name
+	if '@(ModuleAuthorName)' in fData:
+		fData = fData.replace('@(ModuleAuthorName)', ModuleAuthorName)
 		hasModified = True
 	
 	# Do modifications
