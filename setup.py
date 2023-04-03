@@ -1,6 +1,5 @@
-from lib2to3.pgen2.token import OP
 import os
-from turtle import fd
+import sys
 
 # Change this values according to your Project.
 ModuleName = os.path.split(os.path.split(__file__)[0])[1]
@@ -12,11 +11,14 @@ ModuleAuthorName = ""
 
 ScriptName = os.path.split(__file__)[1]
 
-# Check name
-if ' ' in ModuleName:
-	raise NameError("Module name have space.")
-elif ModuleName == 'Magisk-Module-Template':
-	raise NotImplementedError()
+dryRun = "--dry-run" in sys.argv
+
+if not dryRun:
+	# Check name
+	if ' ' in ModuleName:
+		raise NameError("Module name have space.")
+	elif ModuleName == 'Magisk-Module-Template':
+		raise NotImplementedError()
 
 def makeTree(source = '.'):
 	tree = []
@@ -61,8 +63,13 @@ for f in makeTree():
 		fData = fData.replace('@(ModuleAuthorName)', ModuleAuthorName)
 		hasModified = True
 	
-	# Do modifications
 	if hasModified:
-		with open(f, 'w') as file:
-			file.write(fData)
-
+		# Do modifications
+		if not dryRun:
+			with open(f, 'w') as file:
+				file.write(fData)
+		# Write modifications to console
+		else:
+			print('Modified file: ' + f)
+			print(fData)
+			print()
