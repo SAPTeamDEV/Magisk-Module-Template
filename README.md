@@ -8,7 +8,7 @@ This magis module template made the module creation way easier.
 
 ## Getting started
 Working with this template is very easy. Most of actions is automated. with this instruction you can benefit all features of this module:
-- First you need to make a fork of this repository to your account.
+- First you need to make a repository from this template.
 - Then clone your new repository to your computer.
 - in module files open `setup.py` with an text editor and replace the variables with your module props.
 - Run `setup.py` and after after finishing the first run, delete it.
