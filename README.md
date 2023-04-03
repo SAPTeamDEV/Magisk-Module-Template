@@ -12,7 +12,7 @@ Working with this template is very easy. Most of actions is automated. with this
 - Then clone your new repository to your computer.
 - in module files open `setup.py` with an text editor and replace the variables with your module props.
 - Run `setup.py` and after after finishing the first run, delete it.
-- Open `module.prop` and `update.json` and change the version and github repo link strings. You don't need to change the entire link, just correct the github account and repo name.
+- Open `module.prop` and `update.json` to correct the github account and repo name if it was wrong.
 - Put your module files and update the changelog.
 - Create a tag and push it. when a new tag is pushed the action is triggered and new release zip is automatically created.
 You must check the Actions tab of your project for checking issues.

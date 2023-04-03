@@ -1,3 +1,4 @@
 ### Changelog
-* Add ModuleDisplayName and ModuleAuthorName variables to setup for more customization.
-* Exclude setup and readme files from archiving to reduce zip file size.
+* Add ModuleVersion and ModuleVersionCode variables to `setup.py`.
+* some bugfixes for `setup.py` variable replacements.
+* Add `--dry-run` command line argument to `setup.py` for previewing changes.
