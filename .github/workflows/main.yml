@@ -12,5 +12,6 @@ jobs:
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
+        removeArtifacts: true
         token: ${{ secrets.GITHUB_TOKEN }}
         bodyFile: changelog.md
