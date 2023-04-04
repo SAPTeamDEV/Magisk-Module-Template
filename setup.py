@@ -30,7 +30,7 @@ def makeTree(source = '.'):
 		if os.path.isdir(os.path.join(source, p)) and not p in ['.git', '.vs']:
 			for path in makeTree(os.path.join(source, p)):
 				tree.append(path)
-		elif os.path.isfile(os.path.join(source, p)) and not p in [ScriptName]:
+		elif os.path.isfile(os.path.join(source, p)) and not p in [ScriptName, 'main.yml.release']:
 			tree.append(os.path.join(source, p))
 	return tree
 
@@ -39,6 +39,14 @@ for f in makeTree():
 		fData = file.read()
 	
 	hasModified = False
+	
+	# Replace template release workflow
+	if f.endswith('main.yml'):
+		with open(f + '.release', 'r') as tfile:
+			fData = tfile.read()
+		os.remove(f + '.release')
+		hasModified = True
+	
 	# Replace module name
 	if '@(ModuleName)' in fData:
 		fData = fData.replace('@(ModuleName)', ModuleName)
@@ -73,11 +81,6 @@ for f in makeTree():
 		hasModified = True
 	if '@(RepositoryOwner)' in fData:
 		fData = fData.replace('@(RepositoryOwner)', RepositoryOwner)
-		hasModified = True
-		
-	# Replace commented parts in main.yml
-	if 'main.yml' in f:
-		fData = fData.replace('# ', '')
 		hasModified = True
 	
 	if hasModified:
