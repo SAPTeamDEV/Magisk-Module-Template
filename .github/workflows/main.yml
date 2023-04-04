@@ -20,6 +20,6 @@ jobs:
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
-        # artifacts: "@(ModuleName).zip"
+        artifacts: "@(ModuleName).zip"
         token: ${{ secrets.GITHUB_TOKEN }}
         bodyFile: changelog.md
