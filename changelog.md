@@ -1,3 +1,3 @@
 ### Changelog
-* Add RepositoryName and RepositoryOwner variables to `setup.py`.
-* Github release bugfix
+* Add Workflow template.
+* Fix a critical bug.

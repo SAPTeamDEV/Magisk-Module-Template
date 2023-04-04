@@ -44,7 +44,8 @@ for f in makeTree():
 	if f.endswith('main.yml'):
 		with open(f + '.release', 'r') as tfile:
 			fData = tfile.read()
-		os.remove(f + '.release')
+		if not dryRun:
+			os.remove(f + '.release')
 		hasModified = True
 	
 	# Replace module name
