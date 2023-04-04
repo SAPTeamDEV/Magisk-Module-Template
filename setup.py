@@ -9,6 +9,10 @@ ModuleVersionCode = ModuleVersion.replace('.', '')
 ModuleDescription = ""
 ModuleAuthorName = ""
 
+# Github repository details. Change these values if needed.
+RepositoryName = ModuleName
+RepositoryOwner = ModuleAuthorName
+
 ScriptName = os.path.split(__file__)[1]
 
 dryRun = "--dry-run" in sys.argv
@@ -61,6 +65,19 @@ for f in makeTree():
 	# Replace module author name
 	if '@(ModuleAuthorName)' in fData:
 		fData = fData.replace('@(ModuleAuthorName)', ModuleAuthorName)
+		hasModified = True
+	
+	# Replace module Github details.
+	if '@(RepositoryName)' in fData:
+		fData = fData.replace('@(RepositoryName)', RepositoryName)
+		hasModified = True
+	if '@(RepositoryOwner)' in fData:
+		fData = fData.replace('@(RepositoryOwner)', RepositoryOwner)
+		hasModified = True
+		
+	# Replace commented parts in main.yml
+	if 'main.yml' in f:
+		fData = fData.replace('# ', '')
 		hasModified = True
 	
 	if hasModified:

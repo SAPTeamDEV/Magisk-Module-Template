@@ -4,4 +4,4 @@ version=@(ModuleVersion)
 versionCode=@(ModuleVersionCode)
 author=@(ModuleAuthorName)
 description=@(ModuleDescription)
-updateJson=https://raw.githubusercontent.com/@(ModuleAuthorName)/@(ModuleName)/master/update.json
+updateJson=https://raw.githubusercontent.com/@(RepositoryOwner)/@(RepositoryName)/master/update.json

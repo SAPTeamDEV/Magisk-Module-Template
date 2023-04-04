@@ -1,5 +1,5 @@
-# SAPTeam's Magisk module template
-This magis module template made the module creation way easier.
+# SAPTeam's Magisk module template automation engine
+This magisk module template made the module creation way easier and smarter.
 
 ## Features
 - Automates the build and releasing with Github actions.
@@ -8,11 +8,9 @@ This magis module template made the module creation way easier.
 
 ## Getting started
 Working with this template is very easy. Most of actions is automated. with this instruction you can benefit all features of this module:
-- First you need to make a repository from this template.
-- Then clone your new repository to your computer.
+- First you need to make a repository from this template and clone it to your computer.
 - in module files open `setup.py` with an text editor and replace the variables with your module props.
-- Run `setup.py` and after after finishing the first run, delete it.
-- Open `module.prop` and `update.json` to correct the github account and repo name if it was wrong.
+- Run `setup.py` and after finishing the first run, delete it.
 - Put your module files and update the changelog.
 - Create a tag and push it. when a new tag is pushed the action is triggered and new release zip is automatically created.
 You must check the Actions tab of your project for checking issues.
